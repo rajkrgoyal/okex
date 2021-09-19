@@ -1,44 +1,41 @@
-lib = File.expand_path("../lib", __FILE__)
-$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "okex/version"
+# -*- encoding: utf-8 -*-
+# stub: okex 0.3.7 ruby lib
 
-Gem::Specification.new do |spec|
-  spec.name          = "okex"
-  spec.version       = OKEX::VERSION
-  spec.authors       = ["David Zhang"]
-  spec.email         = ["v8os.com@gmail.com"]
+Gem::Specification.new do |s|
+  s.name = "okex".freeze
+  s.version = "0.3.7"
 
-  spec.summary       = %q{OKEX Ruby API}
-  spec.description   = %q{RESTful API for okex.com}
-  spec.homepage      = "https://github.com/daqing/okex"
-  spec.license       = "MIT"
+  s.required_rubygems_version = Gem::Requirement.new(">= 0".freeze) if s.respond_to? :required_rubygems_version=
+  s.metadata = { "allowed_push_host" => "https://rubygems.org", "homepage_uri" => "https://github.com/daqing/okex", "source_code_uri" => "https://github.com/daqing/okex" } if s.respond_to? :metadata=
+  s.require_paths = ["lib".freeze]
+  s.authors = ["David Zhang".freeze]
+  s.bindir = "exe".freeze
+  s.date = "2021-09-19"
+  s.description = "RESTful API for okex.com".freeze
+  s.email = ["v8os.com@gmail.com".freeze]
+  s.files = [".gitignore".freeze, ".rspec".freeze, ".travis.yml".freeze, "CODE_OF_CONDUCT.md".freeze, "Gemfile".freeze, "Gemfile.lock".freeze, "LICENSE.txt".freeze, "README.md".freeze, "Rakefile".freeze, "bin/console".freeze, "bin/setup".freeze, "lib/okex.rb".freeze, "lib/okex/api_error.rb".freeze, "lib/okex/api_v3.rb".freeze, "lib/okex/api_v5.rb".freeze, "lib/okex/balance.rb".freeze, "lib/okex/client.rb".freeze, "lib/okex/coin.rb".freeze, "lib/okex/coin/bitcoin.rb".freeze, "lib/okex/coin/usdt.rb".freeze, "lib/okex/host.rb".freeze, "lib/okex/max_size.rb".freeze, "lib/okex/order.rb".freeze, "lib/okex/version.rb".freeze, "okex.gemspec".freeze]
+  s.homepage = "https://github.com/daqing/okex".freeze
+  s.licenses = ["MIT".freeze]
+  s.rubygems_version = "3.2.22".freeze
+  s.summary = "OKEX Ruby API".freeze
 
-  # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
-  # to allow pushing to a single host or delete this section to allow pushing to any host.
-  if spec.respond_to?(:metadata)
-    spec.metadata["allowed_push_host"] = "https://rubygems.org"
+  s.installed_by_version = "3.2.22" if s.respond_to? :installed_by_version
 
-    spec.metadata["homepage_uri"] = spec.homepage
-    spec.metadata["source_code_uri"] = "https://github.com/daqing/okex"
-    # spec.metadata["changelog_uri"] = ""
+  if s.respond_to? :specification_version then
+    s.specification_version = 4
+  end
+
+  if s.respond_to? :add_runtime_dependency then
+    s.add_development_dependency(%q<bundler>.freeze, ["~> 1.17"])
+    s.add_development_dependency(%q<rake>.freeze, ["~> 10.0"])
+    s.add_development_dependency(%q<rspec>.freeze, ["~> 3.0"])
+    s.add_development_dependency(%q<byebug>.freeze, ["~> 11.1"])
+    s.add_runtime_dependency(%q<faraday>.freeze, ["~> 1.5"])
   else
-    raise "RubyGems 2.0 or newer is required to protect against " \
-      "public gem pushes."
+    s.add_dependency(%q<bundler>.freeze, ["~> 1.17"])
+    s.add_dependency(%q<rake>.freeze, ["~> 10.0"])
+    s.add_dependency(%q<rspec>.freeze, ["~> 3.0"])
+    s.add_dependency(%q<byebug>.freeze, ["~> 11.1"])
+    s.add_dependency(%q<faraday>.freeze, ["~> 1.5"])
   end
-
-  # Specify which files should be added to the gem when it is released.
-  # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
-  spec.files         = Dir.chdir(File.expand_path('..', __FILE__)) do
-    `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
-  end
-  spec.bindir        = "exe"
-  spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
-  spec.require_paths = ["lib"]
-
-  spec.add_development_dependency "bundler", "~> 1.17"
-  spec.add_development_dependency "rake", "~> 10.0"
-  spec.add_development_dependency "rspec", "~> 3.0"
-  spec.add_development_dependency "byebug", "~> 11.1"
-
-  spec.add_runtime_dependency "faraday", "~> 1.5"
 end

@@ -84,5 +84,17 @@ module OKEX
 
       raise OKEX::ApiError.new(code, result['data'], result['msg'])
     end
+
+
+    # def _resp(result)
+    #   result = JSON.parse(result.body)
+
+    #   if result['result'] == true
+    #     return result['holding']
+    #   end
+
+    #   raise OKEX::ApiError.new(code, result['data'], result['msg'])
+    # end
+
   end
 end

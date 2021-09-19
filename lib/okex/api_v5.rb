@@ -8,6 +8,10 @@ class OKEX::ApiV5
     client.get(host, "/api/v5/public/instruments?instType=SWAP")
   end
 
+  def futures
+    client.get(host, "/api/v5/public/instruments?instType=FUTURES")
+  end
+
   def orders(inst_id=nil)
     url = "/api/v5/account/positions"
     if inst_id.present?
